@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "2f5ed953-dbf9-4729-beb9-8d101b06aaa1",
+		"name": "Тест запроса на создание нового сотрудника",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "json response test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Responce have a key 'jsonrpc'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.any.key(\"jsonrpc\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"jsonrpc is equal 2.0\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.jsonrpc).to.eql(\"2.0\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responce have a key 'result'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.any.key(\"result\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responce have a key 'id'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.any.key(\"id\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"id is equal 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responce have a key 'protocol'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.any.key(\"protocol\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"protocol is equal 6\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.protocol).to.eql(6);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "fix-online.sbis.ru"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"Yandex\";v=\"22\""
+					},
+					{
+						"key": "x-calledmethod",
+						"value": "Employee.UpdateMiniCard"
+					},
+					{
+						"key": "x-lastmodification",
+						"value": "2022-05-17T114100.896648+03"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU;q=0.8,en-US;q=0.5,en;q=0.3"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.141 YaBrowser/22.3.4.731 Yowser/2.5 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json; charset=UTF-8"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "x-requested-with",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "x-originalmethodname",
+						"value": "RW1wbG95ZWUuVXBkYXRlTWluaUNhcmQ="
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "origin",
+						"value": "https://fix-online.sbis.ru"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://fix-online.sbis.ru/page/staff-list"
+					},
+					{
+						"key": "cookie",
+						"value": "cloud_device_id=c-6dd22219-1ff5-494f-a90e-ee3a16a8cd9c; lang=ru-RU; s3reg=54; _ym_d=1652520113; _ym_uid=1652520113922031368; DeviceId=1905e000-661b-4d41-8b02-25600009de66; did=defdb9fa-2be2-4105-b212-d16265718bfe; SLG_G_WPT_TO=ru; SLG_GWPT_Show_Hide_tmp=1; SLG_wptGlobTipTmp=1; s3sid-online-a536=005b4ec7-0060c17d-00ba-4112adeaf20825fa; s3tok-a536=__3nYwMJg3XGpTivVTAaWMayqLS0GXMENEbFKtdDJ3NSBIjj1P1a5TmU74d1jt98LszAmrd8JdN0XTMCt0XsXfBR3EAVwTVdiD6zbnB9FJfQHgW5h4sqQjRa; CpsUserId=54fe0af8-97b0-4ac7-9194-de3b3ff79db8; sid=005b4ec7-0060c17d-00ba-4112adeaf20825fa; s3su=005b4ec7-0060c17d; tz=-420; s3ds=1536%7C864%7C888%7C750%7C1536%7C824"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"jsonrpc\":\"2.0\",\"protocol\":6,\"method\":\"Employee.UpdateMiniCard\",\"params\":{\"EmployeeData\":{\"d\":[true,33712,116291,95321,33957,115721,\"Полежаев\",null,\"Потап\",null,null,115719,null,null,null,null,{\"Доступ в СБиС\":2,\"Карточка сотрудника\":2},null,0,null,false,false,null,false],\"s\":[{\"n\":\"IsCreation\",\"t\":\"Логическое\"},{\"n\":\"Employee\",\"t\":\"Число целое\"},{\"n\":\"PrivatePersonID\",\"t\":\"Число целое\"},{\"n\":\"UserLink\",\"t\":\"Число целое\"},{\"n\":\"EmployeePosition\",\"t\":\"Число целое\"},{\"n\":\"OrganizationRoot\",\"t\":\"Число целое\"},{\"n\":\"Surname\",\"t\":\"Строка\"},{\"n\":\"Patronymic\",\"t\":\"Строка\"},{\"n\":\"Name\",\"t\":\"Строка\"},{\"n\":\"PhotoID\",\"t\":\"Строка\"},{\"n\":\"OriginalPhotoID\",\"t\":\"Строка\"},{\"n\":\"Organization\",\"t\":\"Число целое\"},{\"n\":\"PositionID\",\"t\":\"Число целое\"},{\"n\":\"Position\",\"t\":\"Строка\"},{\"n\":\"Contacts\",\"t\":\"Выборка\"},{\"n\":\"DepartmentPath\",\"t\":\"Выборка\"},{\"n\":\"Rights\",\"t\":\"JSON-объект\"},{\"n\":\"WorkgroupID\",\"t\":\"Число целое\"},{\"n\":\"Type\",\"t\":\"Число целое\"},{\"n\":\"Category\",\"t\":\"Число целое\"},{\"n\":\"Access\",\"t\":\"Логическое\"},{\"n\":\"IsManagementAccounting\",\"t\":\"Логическое\"},{\"t\":\"Строка\",\"n\":\"Phone\"},{\"t\":\"Логическое\",\"n\":\"CreateSign\"}],\"_type\":\"record\",\"f\":0}},\"id\":1}"
+				},
+				"url": {
+					"raw": "https://fix-online.sbis.ru/service/?x_version=22.2155-180",
+					"protocol": "https",
+					"host": [
+						"fix-online",
+						"sbis",
+						"ru"
+					],
+					"path": [
+						"service",
+						""
+					],
+					"query": [
+						{
+							"key": "x_version",
+							"value": "22.2155-180"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
